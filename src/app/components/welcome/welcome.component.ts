@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  isAuntheticated: boolean = false;
+  username: string = "";
 
-  ngOnInit(): void {
+  constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth) { }
+
+  async ngOnInit() {
+    this.isAuntheticated = await this.oktaAuth.isAuthenticated();
+
+    if (this.isAuntheticated) {
+      const userClaims = await this.oktaAuth.getUser();
+      this.username = userClaims.name || "";
+    }
   }
 
 }

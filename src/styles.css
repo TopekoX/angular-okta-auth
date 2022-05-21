@@ -2,3 +2,7 @@
 body {
     padding-top: 80px;
 }
+
+a.menu_links { 
+    cursor: pointer; 
+}

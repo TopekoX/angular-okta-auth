@@ -17,7 +17,8 @@
                     <a *ngIf="!isAuthenticated" class="nav-link active" aria-current="page" routerLink="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a *ngIf="isAuthenticated" (click)="logout()" class="nav-link active"  aria-current="page">Logout</a>
+                    <a *ngIf="isAuthenticated" (click)="logout()" class="nav-link active menu_links"  
+                            onclick="displayData(11,1,0,'A')" onmouseover="" style="cursor: pointer;" aria-current="page">Logout</a>
                 </li>               
             </ul>            
         </div>

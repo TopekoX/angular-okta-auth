@@ -1,10 +1,55 @@
-# AngularOktaExample
+# Angular Okta Example
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+
+## Clone
+
+Clone this project
+
+```
+git clone https://github.com/TopekoX/angular-okta-auth.git
+```
+
+## Install Dependency
+
+Install Dependency
+
+```
+npm install
+```
+
+## Update Okta App Client Id and Okta Domain
+
+Update file `src/app/app.config.ts`, change parameter in accordance your Octa App
+
+```javascript
+export default {
+    oidc: {
+        clientId: 'YOUR_CLIENT_ID',
+        issuer: 'https://YOUR_OKTA_DOMAIN/oauth2/default',
+        redirectUri: 'http://localhost:4200/login/callback',
+        scoper: ['openid', 'profile', 'email']
+    }
+}
+```
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Screenshoot
+
+Login Page
+
+![https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/1.png](https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/1.png)
+
+Login Procces
+
+![https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/2.png](https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/2.png)
+
+Login Success
+
+![https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/3.png](https://raw.githubusercontent.com/TopekoX/angular-okta-auth/main/screenshot/3.png)
 
 ## Code scaffolding
 

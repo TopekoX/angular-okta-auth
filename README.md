@@ -20,7 +20,7 @@ npm install
 
 ## Update Okta App Client Id and Okta Domain
 
-Update file `src/app/app.config.ts`, change parameter in accordance your Octa App
+Update file `src/app/app.config.ts`, change parameter in accordance your Okta App
 
 ```javascript
 export default {

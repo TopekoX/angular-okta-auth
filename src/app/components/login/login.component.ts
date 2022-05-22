@@ -11,7 +11,6 @@ import appConfig from 'src/app/app.config';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  username: string = '';
   signIn: any;
 
   constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth) {

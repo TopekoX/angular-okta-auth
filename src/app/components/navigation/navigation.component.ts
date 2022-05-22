@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
+import { OKTA_AUTH } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
 @Component({
@@ -11,8 +11,7 @@ export class NavigationComponent implements OnInit {
 
   isAuthenticated: boolean = false;
 
-  constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth,
-              public authStateService: OktaAuthStateService) {
+  constructor(@Inject(OKTA_AUTH) public oktaAuth: OktaAuth) {
 
     this.oktaAuth.authStateManager.subscribe(
       isAuth => this.isAuthenticated = isAuth
